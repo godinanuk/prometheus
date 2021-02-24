@@ -52,7 +52,7 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-    - targets: ['34.65.78.4:8080']
+    - targets: ['34.65.242.252:8080']
   - job_name: 'kubernetes-apiservers'
 
     kubernetes_sd_configs:
