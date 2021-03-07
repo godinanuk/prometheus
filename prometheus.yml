@@ -40,12 +40,12 @@ scrape_configs:
     static_configs:
     - targets: ['grafana:3000']
   - job_name: 'hello-flask'
-  
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
 
-    static_configs:
-    - targets: ['hello-flask:5000']
+    dns_sd_configs:
+      - names: ['hello-flask']
+        port: 5100
+        type: A
+        refresh_interval: 5s 
   - job_name: 'jenkins'
     metrics_path: /prometheus
     # metrics_path defaults to '/metrics'
